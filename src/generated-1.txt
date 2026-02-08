@@ -1,0 +1,41 @@
+typescript jsx
+// pages/index.tsx
+import Head from 'next/head';
+import ButterflyArticle from '../components/ButterflyArticle'; // Adjust path if needed
+
+const HomePage: React.FC = () => {
+  return (
+    <div>
+      <Head>
+        <title>Trinck Landing Page - Discover Butterflies</title>
+        <meta name="description" content="Explore the enchanting world of butterflies on our landing page." />
+        {/* Add more meta tags for SEO and social sharing */}
+      </Head>
+
+      <main className="min-h-screen bg-gray-100">
+        {/* Your header or navigation goes here */}
+        {/* <Header /> */}
+
+        {/* Hero section */}
+        <section className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white py-20 text-center">
+          <h1 className="text-5xl font-bold mb-4">Welcome to Trinck</h1>
+          <p className="text-xl">Discover the magic of code and nature!</p>
+        </section>
+
+        {/* The Butterfly Article section */}
+        <section className="py-12">
+          <ButterflyArticle />
+        </section>
+
+        {/* Other sections of your landing page */}
+        {/* <FeaturesSection /> */}
+        {/* <ContactForm /> */}
+
+        {/* Your footer goes here */}
+        {/* <Footer /> */}
+      </main>
+    </div>
+  );
+};
+
+export default HomePage;
