@@ -1,0 +1,70 @@
+typescript jsx
+// components/ButterflyArticle.tsx
+import React from 'react';
+
+/**
+ * Props for the ButterflyArticle component.
+ * In a real application, content might come from a CMS.
+ */
+interface ButterflyArticleProps {
+  // Add any dynamic props here if needed, e.g., 'title', 'imageSrc'
+  // For now, content is hardcoded for simplicity.
+}
+
+const ButterflyArticle: React.FC<ButterflyArticleProps> = () => {
+  return (
+    <article className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8 bg-white shadow-lg rounded-lg my-8">
+      {/*
+        Semantic HTML for article content:
+        - <article>: Represents a self-contained composition.
+        - <h2>: Main heading for the article.
+        - <p>: Paragraphs for body text.
+        - <img>: For illustrative images with essential alt text.
+      */}
+
+      <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight text-center mb-8 leading-tight">
+        The Delicate Dance: A Tribute to Butterflies
+      </h2>
+
+      {/* Placeholder for an inspiring butterfly image */}
+      {/*
+        Best Practice: Image Optimization
+        - In Next.js, use `next/image` for automatic optimization (lazy loading, responsive sizing, WebP conversion).
+        - Always include descriptive `alt` text for accessibility and SEO.
+        - `loading="lazy"` helps performance by deferring image loading until it's needed.
+      */}
+      <div className="mb-8 flex justify-center">
+        <img
+          src="/images/butterfly-hero.jpg" // IMPORTANT: Replace with your actual image path (e.g., in `public/images/`)
+          alt="A vibrant monarch butterfly gracefully resting on a purple flower"
+          className="rounded-lg shadow-md w-full md:max-w-2xl object-cover h-64 md:h-96"
+          loading="lazy" // Defer image loading to improve initial page load performance
+        />
+      </div>
+
+      <div className="prose prose-lg text-gray-700 mx-auto">
+        <p className="mb-6 leading-relaxed text-justify">
+          Butterflies, those fleeting jewels of the sky, captivate us with their vibrant colors and graceful flight. More than just a delight for the eyes, these enchanting insects play a crucial role in our ecosystems as vital pollinators. From the dramatic metamorphosis of a tiny caterpillar into a magnificent winged creature to their incredible migratory journeys spanning thousands of miles, butterflies symbolize transformation, hope, and the delicate balance of nature.
+        </p>
+        <p className="leading-relaxed text-justify">
+          Their presence enriches our gardens and wild spaces, reminding us of the intricate beauty that surrounds us. Protecting their habitats and understanding their life cycles is essential to ensure these delicate dancers continue to grace our world for generations to come. Let this article be a gentle reminder of the magic that unfolds in our natural world and the importance of preserving it for future generations.
+        </p>
+      </div>
+
+      {/* Optional: Add a call to action or link to more information */}
+      {/*
+      <div className="text-center mt-12">
+        <a
+          href="/conservation-efforts" // Link to a relevant page
+          className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
+        >
+          Discover More About Butterfly Conservation
+          <svg className="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+        </a>
+      </div>
+      */}
+    </article>
+  );
+};
+
+export default ButterflyArticle;
